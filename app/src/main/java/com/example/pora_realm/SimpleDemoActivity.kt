@@ -21,7 +21,6 @@ import io.realm.kotlin.notifications.ResultsChange
 import io.realm.kotlin.query.RealmResults
 import io.realm.kotlin.types.RealmObject
 import io.realm.kotlin.types.annotations.PrimaryKey
-import kotlinx.coroutines.launch
 import java.util.UUID
 
 class SimpleDemoActivity : AppCompatActivity() {
@@ -103,7 +102,6 @@ class SimpleDemoActivity : AppCompatActivity() {
             })
         }
         logDatabaseContent()
-        adapter.notifyDataSetChanged()
     }
 
     fun removePersonAtIndex(index: Int) {
