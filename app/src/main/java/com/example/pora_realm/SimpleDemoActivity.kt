@@ -144,11 +144,19 @@ class SimpleDemoActivity : AppCompatActivity() {
 
 
 // Realm class
-class PersonRealm : RealmObject  {
+open class PersonRealm : RealmObject  {
     @PrimaryKey
     var _id: String = UUID.randomUUID().toString()
-
     var name: String = ""
     var city: String = ""
 }
 
+open class StudentRealm : RealmObject {
+    @PrimaryKey
+    var _id: String = UUID.randomUUID().toString()
+
+    var person: PersonRealm? = null
+
+    var studentId: String = ""
+    var grade: Int = 0
+}

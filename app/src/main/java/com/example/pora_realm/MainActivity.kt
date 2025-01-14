@@ -26,5 +26,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, SimpleDemoActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnDemoComposition.setOnClickListener {
+            val intent = Intent(this, DemoInheritanceCompositionActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
