@@ -21,4 +21,4 @@ dependencyResolutionManagement {
 
 rootProject.name = "Pora-Realm"
 include(":app")
- 
+include(":app:lib")
