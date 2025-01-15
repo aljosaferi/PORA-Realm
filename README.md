@@ -3,7 +3,7 @@
 ## :thinking:Zakaj? 
 
 Realm je moderna baza podatkov, namenjena mobilnim aplikacijam. Omogoča hitro in enostavno shranjevanje podatkov lokalno na napravi ter podpira real-time posodobitve. 
-Zaradi objektno-orientiranega pristopa je delo z njo preprosto, saj ni potrebe po kompleksnih SQL poizvedbah. Z uporabo Realm Sync lahko podatke sinhroniziramo med lokalno napravo in oblakom.
+Zaradi objektno-orientiranega pristopa je delo z njo preprosto, saj ni potrebe po kompleksnih SQL poizvedbah. Z uporabo Realm Sync lahko podatke sinhroniziramo med lokalno napravo in mongodb oblakom.
 Realm je poznan po visoki zmogljivosti in nizki porabi virov, kar ga naredi idealnega za mobilne aplikacije.
 
 ## :heavy_check_mark:Prednosti
@@ -13,7 +13,7 @@ Realm je poznan po visoki zmogljivosti in nizki porabi virov, kar ga naredi idea
 - samodejno posodabljanje pdoatkov v realnem času
 - z Realm Sync lahko sinhroniziramo z oblakom (end of life 30. september 2025)
 - podpira android, react native, nodejs, javascript...
-- objektno orientiran pristop
+- objektno orientiran pristop, podpira vsebovanje(vsebovanje)
 
 ## :x:Slabosti
 
@@ -116,9 +116,9 @@ open class StudentRealm : RealmObject {
 - ```name:``` Shranjuje ime osebe.
 - ```city:``` Shranjuje mesto, v katerem oseba živi.
 
-```StudentRealm``` je razred, ki pridobi osnovno entiteto osebe (prek kompozicije) in doda lastnosti, ki so specifične za študenta, kot so študentska številka in ocena.
+```StudentRealm``` je razred, ki pridobi osnovno entiteto osebe (prek vsebovanja) in doda lastnosti, ki so specifične za študenta, kot so študentska številka in ocena.
 - ```@PrimaryKey:``` Podobno kot pri PersonRealm, je _id tudi za StudentRealm glavna identifikacija objekta.
-- ```person:``` Ta lastnost je povezava (kompozicija) na objekt PersonRealm, ki predstavlja osebo, povezano s študentom. To pomeni, da vsak študent "podeduje" osnovne informacije o osebi, kot so ime in mesto.
+- ```person:``` Ta lastnost je povezava na objekt PersonRealm, ki predstavlja osebo, povezano s študentom. To pomeni, da vsak študent "podeduje" osnovne informacije o osebi, kot so ime in mesto.
 - ```studentId:``` Shranjuje študentsko številko, ki je specifična za študenta.
 - ```grade:``` Shranjuje oceno študenta.
 
